@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ESSI_cloneApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SnackListView()
         }
+        .modelContainer(for: Snack.self)
     }
 }

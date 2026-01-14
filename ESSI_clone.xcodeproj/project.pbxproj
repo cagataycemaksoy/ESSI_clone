@@ -6,17 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7597FCE72F17AF2700A1C45E /* SnackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597FCE42F17AF2700A1C45E /* SnackListView.swift */; };
+		7597FCE82F17AF2700A1C45E /* ESSI_cloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597FCE52F17AF2700A1C45E /* ESSI_cloneApp.swift */; };
+		7597FCE92F17AF2700A1C45E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7597FCE32F17AF2700A1C45E /* Assets.xcassets */; };
+		7597FCEC2F17B00F00A1C45E /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597FCEB2F17B00F00A1C45E /* Snack.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		7597FCD32F17AD9900A1C45E /* ESSI_clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESSI_clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7597FCE32F17AF2700A1C45E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7597FCE42F17AF2700A1C45E /* SnackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackListView.swift; sourceTree = "<group>"; };
+		7597FCE52F17AF2700A1C45E /* ESSI_cloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESSI_cloneApp.swift; sourceTree = "<group>"; };
+		7597FCEB2F17B00F00A1C45E /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		7597FCD52F17AD9900A1C45E /* ESSI_clone */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ESSI_clone;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7597FCD02F17AD9900A1C45E /* Frameworks */ = {
@@ -32,7 +35,7 @@
 		7597FCCA2F17AD9900A1C45E = {
 			isa = PBXGroup;
 			children = (
-				7597FCD52F17AD9900A1C45E /* ESSI_clone */,
+				7597FCE62F17AF2700A1C45E /* ESSI_clone */,
 				7597FCD42F17AD9900A1C45E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +46,25 @@
 				7597FCD32F17AD9900A1C45E /* ESSI_clone.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7597FCE62F17AF2700A1C45E /* ESSI_clone */ = {
+			isa = PBXGroup;
+			children = (
+				7597FCEA2F17AF3000A1C45E /* Models */,
+				7597FCE32F17AF2700A1C45E /* Assets.xcassets */,
+				7597FCE42F17AF2700A1C45E /* SnackListView.swift */,
+				7597FCE52F17AF2700A1C45E /* ESSI_cloneApp.swift */,
+			);
+			path = ESSI_clone;
+			sourceTree = "<group>";
+		};
+		7597FCEA2F17AF3000A1C45E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7597FCEB2F17B00F00A1C45E /* Snack.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +81,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				7597FCD52F17AD9900A1C45E /* ESSI_clone */,
 			);
 			name = ESSI_clone;
 			packageProductDependencies = (
@@ -109,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7597FCE92F17AF2700A1C45E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7597FCEC2F17B00F00A1C45E /* Snack.swift in Sources */,
+				7597FCE72F17AF2700A1C45E /* SnackListView.swift in Sources */,
+				7597FCE82F17AF2700A1C45E /* ESSI_cloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,9 +276,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ESSI-clone-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -284,9 +307,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ESSI-clone-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

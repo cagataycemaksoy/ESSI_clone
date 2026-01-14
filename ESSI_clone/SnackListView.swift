@@ -1,13 +1,16 @@
 //
-//  ContentView.swift
+//  SnackListView.swift
 //  ESSI_clone
 //
 //  Created by Cem Aksoy on 14.01.2026.
 //
 
 import SwiftUI
+import SwiftData
 
-struct ContentView: View {
+struct SnackListView: View {
+  @Query private var snacks: [Snack]
+  @Environment(\.modelContext) private var modelContext
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +23,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    SnackListView()
+    .modelContainer(Snack.preview)
 }
