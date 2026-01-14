@@ -17,30 +17,42 @@ struct SnackDetailView: View {
   @State private var onHand = 0
   @State private var notes = ""
   
-    var body: some View {
-      Form {
-        TextField("Snack name", text: $name)
-          .font(.largeTitle)
-          .textFieldStyle(.roundedBorder)
-          .listRowSeparator(.hidden)
+  var body: some View {
+    VStack(alignment: .leading) {
+      TextField("Snack name", text: $name)
+        .font(.largeTitle)
+        .textFieldStyle(.roundedBorder)
+        .listRowSeparator(.hidden)
+      
+      HStack{
+        Text("QTY:")
+          .bold()
         
-        HStack{
-          Text("QTY:")
-            .bold()
-          
-          Spacer()
-          Text("\(onHand)")
-          Stepper("", value: $onHand, in: 0...Int.max)
-            .labelsHidden()
-        }
-        .font(.title2)
+        Spacer()
+        Text("\(onHand)")
+        Stepper("", value: $onHand, in: 0...Int.max)
+          .labelsHidden()
       }
-      .onAppear {
-        name = snack.name
-        onHand = snack.onHand
-        notes = snack.notes
-      }
+      .padding(.bottom)
+      
+      
+      Text("Notes")
+        .bold()
+      
+      TextField("Notes...", text: $notes, axis: .vertical)
+        .textFieldStyle(.roundedBorder)
+      
+      
+      Spacer()
     }
+    .font(.title2)
+    .padding()
+    .onAppear {
+      name = snack.name
+      onHand = snack.onHand
+      notes = snack.notes
+    }
+  }
 }
 
 #Preview {
