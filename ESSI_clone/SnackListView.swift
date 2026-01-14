@@ -12,13 +12,28 @@ struct SnackListView: View {
   @Query private var snacks: [Snack]
   @Environment(\.modelContext) private var modelContext
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+      NavigationStack {
+        List {
+          ForEach(snacks) { snack in
+            VStack(alignment: .leading) {
+              Text(snack.name)
+                .font(.title)
+                .lineLimit(1)
+              
+              HStack {
+                Text("Qty: \(snack.onHand)")
+                Text(snack.notes)
+                  .italic()
+                  .foregroundStyle(.secondary)
+                  .lineLimit(1)
+              }
+              .font(.body)
+            }
+          }
         }
-        .padding()
+        .listStyle(.plain)
+        .navigationTitle("Snacks on Hand:")
+      }
     }
 }
 
