@@ -11,6 +11,7 @@
 		7597FCE82F17AF2700A1C45E /* ESSI_cloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597FCE52F17AF2700A1C45E /* ESSI_cloneApp.swift */; };
 		7597FCE92F17AF2700A1C45E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7597FCE32F17AF2700A1C45E /* Assets.xcassets */; };
 		7597FCEC2F17B00F00A1C45E /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597FCEB2F17B00F00A1C45E /* Snack.swift */; };
+		7597FCEF2F17C5D600A1C45E /* SnackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597FCEE2F17C5D600A1C45E /* SnackDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		7597FCE42F17AF2700A1C45E /* SnackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackListView.swift; sourceTree = "<group>"; };
 		7597FCE52F17AF2700A1C45E /* ESSI_cloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESSI_cloneApp.swift; sourceTree = "<group>"; };
 		7597FCEB2F17B00F00A1C45E /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
+		7597FCEE2F17C5D600A1C45E /* SnackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +53,9 @@
 		7597FCE62F17AF2700A1C45E /* ESSI_clone */ = {
 			isa = PBXGroup;
 			children = (
-				7597FCEA2F17AF3000A1C45E /* Models */,
 				7597FCE32F17AF2700A1C45E /* Assets.xcassets */,
-				7597FCE42F17AF2700A1C45E /* SnackListView.swift */,
-				7597FCE52F17AF2700A1C45E /* ESSI_cloneApp.swift */,
+				7597FCEA2F17AF3000A1C45E /* Models */,
+				7597FCED2F17C58200A1C45E /* Views */,
 			);
 			path = ESSI_clone;
 			sourceTree = "<group>";
@@ -65,6 +66,16 @@
 				7597FCEB2F17B00F00A1C45E /* Snack.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7597FCED2F17C58200A1C45E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7597FCE52F17AF2700A1C45E /* ESSI_cloneApp.swift */,
+				7597FCE42F17AF2700A1C45E /* SnackListView.swift */,
+				7597FCEE2F17C5D600A1C45E /* SnackDetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 			files = (
 				7597FCEC2F17B00F00A1C45E /* Snack.swift in Sources */,
 				7597FCE72F17AF2700A1C45E /* SnackListView.swift in Sources */,
+				7597FCEF2F17C5D600A1C45E /* SnackDetailView.swift in Sources */,
 				7597FCE82F17AF2700A1C45E /* ESSI_cloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
