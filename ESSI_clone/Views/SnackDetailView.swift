@@ -47,6 +47,24 @@ struct SnackDetailView: View {
     }
     .font(.title2)
     .padding()
+    .toolbar {
+      ToolbarItem(placement: .cancellationAction) {
+        Button("Cancel") {
+          dismiss()
+        }
+      }
+      
+      ToolbarItem(placement: .confirmationAction) {
+        Button("Save") {
+          snack.name = name
+          snack.onHand = onHand
+          snack.notes = notes
+          modelContext.insert(snack)
+          guard let _ = try? modelContext.save() else { return }
+          dismiss()
+        }
+      }
+    }
     .onAppear {
       name = snack.name
       onHand = snack.onHand
@@ -56,5 +74,7 @@ struct SnackDetailView: View {
 }
 
 #Preview {
-  SnackDetailView(snack: Snack(name: "Lil Swifties", onHand: 3, notes: "Homemade cookies baked by Prof. G. He will bring these for Lunar New Year.", comfortLevel: .five))
+  NavigationStack {
+    SnackDetailView(snack: Snack(name: "Lil Swifties", onHand: 3, notes: "Homemade cookies baked by Prof. G. He will bring these for Lunar New Year.", comfortLevel: .five))
+  }
 }
