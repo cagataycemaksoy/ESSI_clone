@@ -11,28 +11,51 @@ import SwiftData
 struct SnackListView: View {
   @Query private var snacks: [Snack]
   @Environment(\.modelContext) private var modelContext
+  @State private var sheetShown = false
+  
     var body: some View {
       NavigationStack {
         List {
           ForEach(snacks) { snack in
-            VStack(alignment: .leading) {
-              Text(snack.name)
-                .font(.title)
-                .lineLimit(1)
-              
-              HStack {
-                Text("Qty: \(snack.onHand)")
-                Text(snack.notes)
-                  .italic()
-                  .foregroundStyle(.secondary)
+            NavigationLink {
+              SnackDetailView(snack: snack)
+            } label: {
+              VStack(alignment: .leading) {
+                Text(snack.name)
+                  .font(.title)
                   .lineLimit(1)
+                
+                HStack {
+                  Text("Qty: \(snack.onHand)")
+                  Text(snack.notes)
+                    .italic()
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                }
+                .font(.body)
               }
-              .font(.body)
             }
+
           }
         }
         .listStyle(.plain)
         .navigationTitle("Snacks on Hand:")
+        .sheet(isPresented: $sheetShown) {
+          let newSnack = Snack()
+          NavigationStack {
+            SnackDetailView(snack: newSnack)
+          }
+        }
+        .toolbar {
+          ToolbarItem(placement: .topBarTrailing) {
+            Button {
+              sheetShown = true
+            } label: {
+              Image(systemName: "plus")
+            }
+
+          }
+        }
       }
     }
 }

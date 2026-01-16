@@ -47,6 +47,7 @@ struct SnackDetailView: View {
     }
     .font(.title2)
     .padding()
+    .navigationBarBackButtonHidden()
     .toolbar {
       ToolbarItem(placement: .cancellationAction) {
         Button("Cancel") {
