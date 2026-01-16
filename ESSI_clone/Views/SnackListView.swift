@@ -35,6 +35,11 @@ struct SnackListView: View {
                 .font(.body)
               }
             }
+            .swipeActions {
+              Button("Delete", role: .destructive) {
+                modelContext.delete(snack)
+              }
+            }
 
           }
         }

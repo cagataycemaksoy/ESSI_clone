@@ -15,6 +15,7 @@ struct SnackDetailView: View {
   
   @State private var name = ""
   @State private var onHand = 0
+  @State private var selectedComfortLevel: Snack.Rating = .one
   @State private var notes = ""
   
   var body: some View {
@@ -35,6 +36,19 @@ struct SnackDetailView: View {
       }
       .padding(.bottom)
       
+      HStack {
+        Text("Comfort:")
+          .bold()
+        
+        Spacer()
+        
+        Picker("", selection: $selectedComfortLevel) {
+          ForEach(Snack.Rating.allCases, id: \.self) { rating in
+            Text("\(rating.rawValue)")
+          }
+        }
+      }
+      .padding(.bottom)
       
       Text("Notes")
         .bold()
@@ -59,6 +73,7 @@ struct SnackDetailView: View {
         Button("Save") {
           snack.name = name
           snack.onHand = onHand
+          snack.comfortLevel = selectedComfortLevel
           snack.notes = notes
           modelContext.insert(snack)
           guard let _ = try? modelContext.save() else { return }
@@ -69,6 +84,7 @@ struct SnackDetailView: View {
     .onAppear {
       name = snack.name
       onHand = snack.onHand
+      selectedComfortLevel = snack.comfortLevel
       notes = snack.notes
     }
   }
